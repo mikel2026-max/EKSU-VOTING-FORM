@@ -1,0 +1,172 @@
+:root {
+    --gold: #d4af37;
+    --gold-soft: #f1d27a;
+    --black: #0a0a0a;
+    --card: #111111;
+    --text: #eaeaea;
+    --muted: #888;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--black);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+    height: 50vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+        url("https://images.unsplash.com/photo-1511578314322-379afb476865") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.hero p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+/* CONTAINER */
+.container {
+    width: 92%;
+    max-width: 850px;
+    margin: 60px auto;
+}
+
+/* CATEGORY CARD */
+.card {
+    background: var(--card);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 28px;
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: linear-gradient(120deg, transparent, rgba(212,175,55,0.15), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+}
+
+/* TITLES */
+.card h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--gold-soft);
+    margin-bottom: 6px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    color: var(--muted);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* OPTIONS */
+.card label {
+    display: block;
+    padding: 12px 14px;
+    margin-top: 10px;
+    background: #0d0d0d;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.card label:hover {
+    border-color: rgba(212,175,55,0.5);
+    background: #141414;
+}
+
+/* RADIO */
+input[type="radio"] {
+    accent-color: var(--gold);
+    margin-right: 10px;
+    transform: scale(1.1);
+}
+
+/* SUBMIT BUTTON */
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #b8962e, #f1d27a);
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(212,175,55,0.4);
+}
+
+/* MESSAGE */
+#message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--gold-soft);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 80px;
+    padding: 25px;
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(212,175,55,0.2);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
